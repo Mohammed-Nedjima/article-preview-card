@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  --clr-grayish-blue-700: hsl(217, 19%, 35%);
+  --clr-grayish-blue-500: hsl(214, 17%, 51%);
+  --clr-grayish-blue-200: hsl(212, 23%, 69%);
+  --clr-grayish-blue-100: hsl(210, 46%, 95%);
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  font-size: 13px;
+  --ff-normal: "Manrope", sans-serif;
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+a {
+  text-decoration: none;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+.container {
+  padding-inline: 1.5rem;
+}
+body {
+  font-family: var(--ff-normal);
+  font-weight: var(--fw-regular);
+  color: var(--clr-grayish-blue-200);
+  background-color: var(--clr-grayish-blue-100);
+  font-size: var(--fs-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  display: grid;
+  max-width: 700px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@media (min-width: 550px) {
+  .card {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+}
+.card__head {
+  min-height: 100%;
+}
+.card__content {
+  padding-top: 2rem;
+  padding-bottom: 1.25rem;
+}
+.card__title {
+  color: var(--clr-grayish-blue-700);
+  font-weight: var(--fw-bold);
+  margin-bottom: 1.25rem;
+}
+.card__desc {
+  margin-bottom: 2.75rem;
+}
+
+.card__footer .static {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__owner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card__owner__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.card__owner__name {
+  color: var(--clr-grayish-blue-700);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+.card__owner__release {
+  font-weight: var(--fw-regular);
+}
+
+.share-btn {
+  z-index: 3;
+  color: var(--clr-grayish-blue-500);
+  font-size: 20px;
+  background-color: var(--clr-grayish-blue-100);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.active {
+  color: white !important;
+  background-color: var(--clr-grayish-blue-500) !important;
+}
+.card__share {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  padding-block: calc(15px + 1.25rem);
+  background-color: var(--clr-grayish-blue-700);
+  position: absolute;
+  bottom: -85px;
+  transition: 0.3s ease-out;
+}
+/* @media (min-width: 550px) {
+  .card__share {
+    gap: 1rem;
+    width: auto;
+    padding: 1.5rem;
+    display: none;
+    bottom: 100px;
+  }
+}
+.triangle {
+  width: 20px;
+  height: 20px;
+  border: 10px solid var(--clr-grayish-blue-700);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+} */
+/* @media (min-width: 550px) {
+  .card__share {
+    padding-block: 1rem;
+  }
+} */
+.share {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: var(--fw-bold);
+}
